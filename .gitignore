@@ -1,0 +1,19 @@
+# Python virtual environment
+venv/
+.venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Environment variables - DO NOT COMMIT THIS FILE
+.env
+
+# Generated FAISS index - this can be rebuilt from the source document
+faiss_index/
+
+# VSCode specific
+.vscode/
+
+# VSCode temp files
+tempCodeRunnerFile.python
