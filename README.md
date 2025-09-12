@@ -8,6 +8,24 @@ A smart conversational agent designed for a fictional Napa Valley winery, "Golde
 
 The project is built with a modern, tool-based architecture using LangGraph, ensuring it is accurate, fast, and flexible.
 
+---
+
+## 🚀 Project Deliverables
+
+### 📄 Project Report
+
+A detailed report covering the project's objectives, architecture, agent design process, and outcomes.
+
+**[➡️ View the Full Project Report (PDF)](https://github.com/Saransh-aggarwal/conversational-agent/blob/main/Conversational_Concierge_Project_Checklist.pdf)**
+
+### 🎬 Video Demonstration
+
+A short demonstration of the agent's ability to handle a complex, multi-part query that requires using all three of its tools in a single turn. Click the thumbnail below to watch on YouTube.
+
+[![Project Demo Video](https://img.youtube.com/vi/UUvDzDP3rwE/hqdefault.jpg)](https://youtu.be/UUvDzDP3rwE)
+
+---
+
 ## ✨ Key Features
 
 -   🧠 **Deep Winery Knowledge:** Answers complex questions about the winery's history, wines, winemaker, tasting experiences, and wine club using a Retrieval-Augmented Generation (RAG) system.
@@ -16,42 +34,11 @@ The project is built with a modern, tool-based architecture using LangGraph, ens
 -   🤖 **Intelligent Tool Orchestration:** Built with LangGraph, the agent can seamlessly decide which tool to use, or even use multiple tools in sequence, to answer complex, multi-part questions in a single, synthesized response.
 -   💬 **Interactive UI:** A simple and clean web interface built with Streamlit for an intuitive and engaging user experience.
 
-## 🎥 Live Demo
-
-This animation demonstrates the agent's ability to handle a complex, multi-part query that requires using all three of its tools in a single turn.
-
-*(To create this, record your screen using a tool like [LiceCap](https://www.cockos.com/licecap/) or [ScreenToGif](https://www.screentogif.com/) and save the file as `demo.gif` in this directory)*
-![Agent Demo GIF](demo.gif)
-
 ## 🏛️ Architecture Overview
 
-The agent operates on a modular, tool-driven architecture orchestrated by LangGraph.
+The agent operates on a modular, tool-driven architecture orchestrated by LangGraph. When a user provides input, the LangGraph agent uses LLM-powered reasoning to select the most appropriate tool (or tools) to fulfill the request. The results are then synthesized into a coherent final answer and presented to the user.
 
-```
-User Input --> [Streamlit UI] --> [LangGraph Agent]
-                                      |
-                      +----------------------------------+
-                      |         (LLM Reasoning)          |
-                      |   Which tool should I use?       |
-                      +----------------------------------+
-                                      |
-                                      |
-                      +---------------+------------------+
-                      |               |                  |
-              [Winery RAG Tool]  [Weather Tool]     [Web Search Tool]
-              (FAISS Vector DB)  (OpenWeatherMap)     (Tavily API)
-                      |               |                  |
-                      +---------------+------------------+
-                                      |
-                                      |
-                      +----------------------------------+
-                      |       (LLM Synthesis)            |
-                      |    Formulate final answer...     |
-                      +----------------------------------+
-                                      |
-                                      |
-                               [Streamlit UI] --> User Response
-```
+![LangGraph Agent Architecture](https://github.com/Saransh-aggarwal/conversational-agent/blob/main/architecture%20(2).png?raw=true)
 
 1.  The **Streamlit UI** captures the user's query.
 2.  The **LangGraph Agent** receives the query and, using the Gemini LLM, decides which tool is best suited to answer it.
@@ -172,3 +159,4 @@ The project is organized into modular files to separate concerns and improve mai
 -   **Booking & Reservation Tool:** Implement a new tool that can simulate booking a tasting or tour by interacting with a mock API.
 -   **Deployment:** Deploy the Streamlit application to a public cloud service like Streamlit Community Cloud or Hugging Face Spaces.
 -   **Formal Evaluation:** Set up an evaluation pipeline using a framework like LangSmith to rigorously test the agent's accuracy and performance.
+
